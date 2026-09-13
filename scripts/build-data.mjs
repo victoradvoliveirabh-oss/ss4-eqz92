@@ -92,7 +92,14 @@ export function montarReferencia(q) {
 /** Último trecho de um caminho tipo "provas_oficiais/ENARE/2024-2025/arquivo.pdf". */
 export function nomeArquivo(caminho) {
   if (typeof caminho !== 'string' || !caminho.trim()) return '';
-  return caminho.split(/[\/]/).pop();
+  return caminho.split(/[/\\]/).pop();
+}
+
+/** O bloco em que a banca cobrou a questão (vem como tag "bloco da prova: X"). */
+export function blocoDaProva(q) {
+  if (typeof q.bloco === 'string' && q.bloco.trim()) return q.bloco.trim();
+  const t = (Array.isArray(q.tags) ? q.tags : []).find((x) => String(x).startsWith('bloco da prova:'));
+  return t ? t.replace('bloco da prova:', '').trim() : '';
 }
 
 export function limparQuestao(q) {
@@ -115,7 +122,10 @@ export function limparQuestao(q) {
     especialidade: q.especialidade,
     tema: (q.tema || '').trim() || 'Sem tema',
     subtema: q.subtema || '',
-    tags: Array.isArray(q.tags) ? q.tags : [],
+    // como a banca organizou a prova — dimensão própria de filtro, separada da nossa
+    // classificação clínica (a questão de hipertensão do bloco "Coletiva" é as duas coisas)
+    bloco: blocoDaProva(q),
+    tags: (Array.isArray(q.tags) ? q.tags : []).filter((t) => !String(t).startsWith('bloco da prova:')),
     fonte: q.fonte ? {
       pagina: q.fonte.pagina ?? null,
       caderno_codigo: q.fonte.caderno_codigo || '',
@@ -132,11 +142,12 @@ export function chaveProva(q) {
 }
 
 export function gerarMeta(questoes, { modoExemplo, arquivos }) {
-  const bancas = new Map(), anos = new Map(), provas = new Map();
+  const bancas = new Map(), anos = new Map(), provas = new Map(), blocos = new Map();
   const areas = new Map();
   let comImagem = 0, anuladas = 0;
   for (const q of questoes) {
     bancas.set(q.banca, (bancas.get(q.banca) || 0) + 1);
+    if (q.bloco) blocos.set(q.bloco, (blocos.get(q.bloco) || 0) + 1);
     anos.set(q.ano, (anos.get(q.ano) || 0) + 1);
     const cp = chaveProva(q);
     if (!provas.has(cp)) provas.set(cp, { chave: cp, banca: q.banca, ano: q.ano, ciclo: q.ciclo, prova: q.prova, cadernos: new Set(), total: 0 });
@@ -160,6 +171,7 @@ export function gerarMeta(questoes, { modoExemplo, arquivos }) {
     anuladas,
     bancas: [...bancas].sort((a, b) => BANCAS.indexOf(a[0]) - BANCAS.indexOf(b[0])).map(([nome, total]) => ({ nome, total })),
     anos: [...anos].sort((a, b) => a[0] - b[0]).map(([ano, total]) => ({ ano, total })),
+    blocos: [...blocos].sort((a, b) => b[1] - a[1]).map(([nome, total]) => ({ nome, total })),
     provas: [...provas.values()]
       .sort((a, b) => BANCAS.indexOf(a.banca) - BANCAS.indexOf(b.banca) || b.ano - a.ano || cmp(a.prova, b.prova))
       .map((p) => ({ ...p, cadernos: [...p.cadernos] })),

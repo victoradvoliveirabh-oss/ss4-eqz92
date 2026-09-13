@@ -230,6 +230,9 @@ function renderPainel() {
     opcao('provas', p.chave, `${p.banca} ${p.ciclo || p.ano} · ${p.prova}`, contagens.provas[p.chave])
   ).join('')}</div>`;
 
+  const secBloco = `<p style="color:var(--tinta-3);font-size:.8rem;margin:0 0 6px">Como a banca organizou a prova — independe da nossa classificação clínica.</p>
+    ${(meta.blocos || []).map((b) => opcao('blocos', b.nome, b.nome, contagens.blocos[b.nome])).join('')}`;
+
   const secHistorico = STATUS.map(([v, r]) => opcao('status', v, r, contarStatus(v))).join('') +
     `<small style="color:var(--tinta-3)">Marcando mais de um, vale qualquer um deles.</small>`;
 
@@ -244,6 +247,7 @@ function renderPainel() {
     secao('banca', 'Banca', secBanca, filtro.bancas.length) +
     secao('ano', 'Ano', secAno, filtro.anos.length + (filtro.anoMin !== null ? 1 : 0) + (filtro.anoMax !== null ? 1 : 0)) +
     secao('prova', 'Prova', secProva, filtro.provas.length) +
+    ((meta.blocos || []).length ? secao('bloco', 'Bloco da prova', secBloco, filtro.blocos.length) : '') +
     secao('historico', 'Meu histórico', secHistorico, filtro.status.length) +
     secao('extras', 'Outros', secExtras, (filtro.imagem !== 'todas' ? 1 : 0) + (filtro.anuladas !== 'incluir' ? 1 : 0));
 
@@ -364,6 +368,7 @@ function chipsHTML() {
     const p = meta.provas.find((x) => x.chave === v);
     add('provas', v, p ? `${p.banca} ${p.ciclo || p.ano} · ${p.prova}` : v);
   });
+  filtro.blocos.forEach((v) => add('blocos', v, `bloco: ${v}`));
   filtro.status.forEach((v) => add('status', v, (STATUS.find(([k]) => k === v) || [, v])[1]));
   if (filtro.imagem !== 'todas') add('imagem', '', filtro.imagem === 'com' ? 'com imagem' : 'sem imagem');
   if (filtro.anuladas !== 'incluir') add('anuladas', '', filtro.anuladas === 'somente' ? 'só anuladas' : 'sem anuladas');
@@ -503,6 +508,7 @@ function sugerirNome() {
       return p[p.length - 1];
     }).join(', '));
   }
+  if (filtro.blocos.length) partes.push(filtro.blocos.join('/'));
   if (filtro.anos.length) partes.push(filtro.anos.join('/'));
   if (filtro.status.includes('erradas')) partes.push('erradas');
   if (filtro.busca.trim()) partes.push(`"${filtro.busca.trim()}"`);

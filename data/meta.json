@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-09-13T03:12:33.857Z",
+ "geradoEm": "2026-09-13T12:40:40.785Z",
  "modoExemplo": false,
  "arquivos": [
   "ENARE_2024-2025.json"
@@ -17,6 +17,28 @@
   {
    "ano": 2024,
    "total": 100
+  }
+ ],
+ "blocos": [
+  {
+   "nome": "Clínica Médica",
+   "total": 20
+  },
+  {
+   "nome": "Cirurgia Geral",
+   "total": 20
+  },
+  {
+   "nome": "Pediatria",
+   "total": 20
+  },
+  {
+   "nome": "Obstetrícia e Ginecologia",
+   "total": 20
+  },
+  {
+   "nome": "Coletiva",
+   "total": 20
   }
  ],
  "provas": [
@@ -225,7 +247,7 @@
   },
   {
    "nome": "Cirurgia",
-   "total": 20,
+   "total": 21,
    "especialidades": [
     {
      "nome": "Cirurgia Geral",
@@ -308,15 +330,11 @@
      ]
     },
     {
-     "nome": "Ortopedia",
-     "total": 2,
+     "nome": "Cirurgia Pediátrica",
+     "total": 1,
      "temas": [
       {
-       "nome": "Fraturas",
-       "total": 1
-      },
-      {
-       "nome": "Ortopedia pediátrica",
+       "nome": "Constipação crônica",
        "total": 1
       }
      ]
@@ -351,6 +369,20 @@
      "temas": [
       {
        "nome": "Câncer de boca",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Ortopedia e Traumatologia",
+     "total": 2,
+     "temas": [
+      {
+       "nome": "Fraturas",
+       "total": 1
+      },
+      {
+       "nome": "Ortopedia pediátrica",
        "total": 1
       }
      ]
@@ -473,7 +505,7 @@
   },
   {
    "nome": "Pediatria",
-   "total": 17,
+   "total": 16,
    "especialidades": [
     {
      "nome": "Neonatologia",
@@ -586,16 +618,6 @@
        "total": 1
       }
      ]
-    },
-    {
-     "nome": "Cirurgia Pediátrica",
-     "total": 1,
-     "temas": [
-      {
-       "nome": "Constipação crônica",
-       "total": 1
-      }
-     ]
     }
    ]
   },
@@ -603,32 +625,6 @@
    "nome": "Medicina Preventiva e Social",
    "total": 12,
    "especialidades": [
-    {
-     "nome": "Medicina de Família e Comunidade",
-     "total": 6,
-     "temas": [
-      {
-       "nome": "Abordagem familiar",
-       "total": 2
-      },
-      {
-       "nome": "Atenção primária à saúde",
-       "total": 1
-      },
-      {
-       "nome": "Projeto terapêutico singular",
-       "total": 1
-      },
-      {
-       "nome": "Registro clínico",
-       "total": 1
-      },
-      {
-       "nome": "Tabagismo",
-       "total": 1
-      }
-     ]
-    },
     {
      "nome": "Vigilância em Saúde",
      "total": 6,
@@ -655,6 +651,32 @@
       },
       {
        "nome": "Tuberculose",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Atenção Primária e Medicina de Família",
+     "total": 6,
+     "temas": [
+      {
+       "nome": "Abordagem familiar",
+       "total": 2
+      },
+      {
+       "nome": "Atenção primária à saúde",
+       "total": 1
+      },
+      {
+       "nome": "Projeto terapêutico singular",
+       "total": 1
+      },
+      {
+       "nome": "Registro clínico",
+       "total": 1
+      },
+      {
+       "nome": "Tabagismo",
        "total": 1
       }
      ]

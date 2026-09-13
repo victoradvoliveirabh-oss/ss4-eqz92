@@ -36,7 +36,7 @@ export function prepararQuestoes(lista) {
 }
 
 export function filtroVazio() {
-  return { bancas: [], anos: [], anoMin: null, anoMax: null, provas: [], assuntos: [], imagem: 'todas', anuladas: 'incluir', status: [], busca: '' };
+  return { bancas: [], anos: [], anoMin: null, anoMax: null, provas: [], blocos: [], assuntos: [], imagem: 'todas', anuladas: 'incluir', status: [], busca: '' };
 }
 
 export function normalizarFiltro(f) {
@@ -86,7 +86,7 @@ export const partesAssunto = (chave) => String(chave).split(SEP);
 export function contarCriterios(f) {
   const n = normalizarFiltro(f);
   let c = 0;
-  for (const k of ['bancas', 'anos', 'provas', 'assuntos', 'status']) c += n[k].length;
+  for (const k of ['bancas', 'anos', 'provas', 'blocos', 'assuntos', 'status']) c += n[k].length;
   if (n.anoMin !== null) c++;
   if (n.anoMax !== null) c++;
   if (n.imagem !== 'todas') c++;
@@ -123,6 +123,7 @@ function compilar(filtro, status) {
   const anos = setOuNull(f.anos.map(Number));
   const provas = setOuNull(f.provas);
   const assuntos = setOuNull(f.assuntos);
+  const blocos = setOuNull(f.blocos);
   const palavras = normalizar(f.busca).split(/\s+/).filter(Boolean);
   const st = f.status.length ? new Set(f.status) : null;
   const idx = status || { ultima: new Map(), resolvidas: new Set(), favoritas: new Set(), anotadas: new Set() };
@@ -150,12 +151,13 @@ function compilar(filtro, status) {
     ano: (q) => (!anos || anos.has(q.ano)) && (f.anoMin === null || q.ano >= f.anoMin) && (f.anoMax === null || q.ano <= f.anoMax),
     prova: (q) => !provas || provas.has(q._prova),
     assunto: (q) => !assuntos || q._chaves.some((k) => assuntos.has(k)),
+    bloco: (q) => !blocos || blocos.has(q.bloco || ''),
   };
 }
 
 export function filtrar(questoes, filtro, status) {
   const c = compilar(filtro, status);
-  return questoes.filter((q) => c.base(q) && c.banca(q) && c.ano(q) && c.prova(q) && c.assunto(q));
+  return questoes.filter((q) => c.base(q) && c.banca(q) && c.ano(q) && c.prova(q) && c.bloco(q) && c.assunto(q));
 }
 
 /**
@@ -165,17 +167,18 @@ export function filtrar(questoes, filtro, status) {
  */
 export function filtrarComFacetas(questoes, filtro, status) {
   const c = compilar(filtro, status);
-  const cont = { bancas: {}, anos: {}, provas: {}, assuntos: {} };
+  const cont = { bancas: {}, anos: {}, provas: {}, blocos: {}, assuntos: {} };
   const inc = (o, k) => { o[k] = (o[k] || 0) + 1; };
   const resultado = [];
   for (const q of questoes) {
     if (!c.base(q)) continue;
-    const b = c.banca(q), a = c.ano(q), p = c.prova(q), s = c.assunto(q);
-    if (a && p && s) inc(cont.bancas, q.banca);
-    if (b && p && s) inc(cont.anos, q.ano);
-    if (b && a && s) inc(cont.provas, q._prova);
-    if (b && a && p) for (const k of q._chaves) inc(cont.assuntos, k);
-    if (b && a && p && s) resultado.push(q);
+    const b = c.banca(q), a = c.ano(q), p = c.prova(q), s = c.assunto(q), bl = c.bloco(q);
+    if (a && p && s && bl) inc(cont.bancas, q.banca);
+    if (b && p && s && bl) inc(cont.anos, q.ano);
+    if (b && a && s && bl) inc(cont.provas, q._prova);
+    if (b && a && p && s && q.bloco) inc(cont.blocos, q.bloco);
+    if (b && a && p && bl) for (const k of q._chaves) inc(cont.assuntos, k);
+    if (b && a && p && s && bl) resultado.push(q);
   }
   return { resultado, contagens: cont };
 }
