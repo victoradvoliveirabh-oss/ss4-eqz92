@@ -231,8 +231,16 @@ export function linksFonteHTML(q) {
     links.push(`<a class="link-fonte" href="provas/${encodeURIComponent(f.prova_arquivo)}${pag}" target="_blank" rel="noopener">
       caderno de prova${f.pagina ? ` (pág. ${esc(f.pagina)})` : ''} ↗</a>`);
   }
+  // Quando há preliminar E alterações, os dois são o gabarito: o definitivo do PSU-MG é a
+  // soma dos dois documentos, então linkar um só não deixa a pessoa conferir a resposta.
+  if (f.gabarito_preliminar_arquivo) {
+    links.push(`<a class="link-fonte" href="provas/${encodeURIComponent(f.gabarito_preliminar_arquivo)}" target="_blank" rel="noopener">gabarito oficial ↗</a>`);
+  }
   if (f.gabarito_arquivo) {
-    links.push(`<a class="link-fonte" href="provas/${encodeURIComponent(f.gabarito_arquivo)}" target="_blank" rel="noopener">gabarito oficial ↗</a>`);
+    links.push(`<a class="link-fonte" href="provas/${encodeURIComponent(f.gabarito_arquivo)}" target="_blank" rel="noopener">${f.gabarito_preliminar_arquivo ? 'alterações após recursos' : 'gabarito oficial'} ↗</a>`);
+  }
+  if (!f.prova_arquivo && f.origem_texto) {
+    links.push(`<span class="fonte-nota">caderno não publicado pela banca; enunciado por ${esc(f.origem_texto.replace(/\s*\(.*\)\s*$/, ''))}</span>`);
   }
   return links.join(' · ');
 }

@@ -599,3 +599,6 @@ body.escuro .arvore mark { background: #5a4a12; color: #ffe9a8; }
   border-bottom: 1px dashed currentColor;
 }
 .link-fonte:hover { color: var(--tinta); }
+
+/* procedência do enunciado quando a banca não publica o caderno (PSU-MG) */
+.fonte-nota { color: var(--tinta-3); font-size: .82rem; }

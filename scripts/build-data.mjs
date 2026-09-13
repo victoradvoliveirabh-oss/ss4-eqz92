@@ -61,8 +61,13 @@ export function validarQuestao(q, imagensDisponiveis = null, { estrito = false }
   if (!ehTexto(q.tema)) avisos.push('tema ausente');
   // Referência completa
   for (const campo of ['ciclo', 'prova', 'caderno']) if (!ehTexto(q[campo])) avisos.push(`${campo} ausente`);
-  if (!q.fonte || !ehTexto(q.fonte.prova_pdf)) avisos.push('fonte.prova_pdf ausente');
-  else if (q.fonte.pagina === undefined || q.fonte.pagina === null) avisos.push('fonte.pagina ausente');
+  // Há banca que não publica o caderno (a AREMG, no PSU-MG). Nesse caso a origem do texto tem
+  // de estar declarada em fonte.origem_texto — o que não se aceita é questão sem procedência.
+  if (!q.fonte || (!ehTexto(q.fonte.prova_pdf) && !ehTexto(q.fonte.origem_texto))) {
+    avisos.push('sem procedência do enunciado (fonte.prova_pdf ou fonte.origem_texto)');
+  } else if (ehTexto(q.fonte?.prova_pdf) && (q.fonte.pagina === undefined || q.fonte.pagina === null)) {
+    avisos.push('fonte.pagina ausente');
+  }
   if (!ehTexto(q.referencia)) {
     if (estrito) erros.push('referencia ausente (campo obrigatório)');
     else avisos.push('REFERENCIA AUSENTE (campo obrigatório) — gerada automaticamente pelos campos');
@@ -134,6 +139,10 @@ export function limparQuestao(q) {
       // só o nome do arquivo: o PDF é espelhado em app/provas/ e o link é montado no app
       prova_arquivo: nomeArquivo(q.fonte.prova_pdf),
       gabarito_arquivo: nomeArquivo(q.fonte.gabarito_pdf),
+      // No PSU-MG o gabarito definitivo é a soma de dois documentos: o preliminar (lista
+      // completa) e as alterações pós-recurso. Linkar só um dos dois não deixa conferir nada.
+      gabarito_preliminar_arquivo: nomeArquivo(q.fonte.gabarito_preliminar_pdf),
+      origem_texto: q.fonte.origem_texto || '',
     } : null,
     revisao: q.revisao ? { extracao_ok: q.revisao.extracao_ok !== false, classificacao_ok: q.revisao.classificacao_ok !== false, observacoes: q.revisao.observacoes || '' } : null,
   };
@@ -282,7 +291,7 @@ function principal() {
     if (!Array.isArray(brutos)) continue;
     for (const q of brutos) {
       if (!q || !q.fonte) continue;
-      for (const campo of ['prova_pdf', 'gabarito_pdf']) {
+      for (const campo of ['prova_pdf', 'gabarito_pdf', 'gabarito_preliminar_pdf']) {
         const caminho = q.fonte[campo];
         if (typeof caminho !== 'string' || !caminho.toLowerCase().endsWith('.pdf')) continue;
         const nome = nomeArquivo(caminho);
