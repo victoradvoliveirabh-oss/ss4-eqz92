@@ -177,7 +177,7 @@ export function filtrarComFacetas(questoes, filtro, status) {
   const resultado = [];
   for (const q of questoes) {
     if (!c.base(q)) continue;
-    const b = c.banca(q), a = c.ano(q), p = c.prova(q), s = c.assunto(q), bl = c.bloco(q);
+    const b = c.banca(q), a = c.ano(q), p = c.prova(q), s = c.assunto(q), bl = c.bloco(q), ex = c.eixo(q);
     if (a && p && s && bl && ex) inc(cont.bancas, q.banca);
     if (b && p && s && bl && ex) inc(cont.anos, q.ano);
     if (b && a && s && bl && ex) inc(cont.provas, q._prova);
