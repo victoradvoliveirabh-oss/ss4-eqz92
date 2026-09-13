@@ -1,13 +1,18 @@
 {
- "geradoEm": "2026-09-13T14:09:33.979Z",
+ "geradoEm": "2026-09-13T18:52:18.045Z",
  "modoExemplo": false,
  "arquivos": [
+  "ENAMED_2025.json",
   "ENARE_2024-2025.json"
  ],
- "total": 100,
- "comImagem": 1,
- "anuladas": 3,
+ "total": 200,
+ "comImagem": 4,
+ "anuladas": 13,
  "bancas": [
+  {
+   "nome": "ENAMED",
+   "total": 100
+  },
   {
    "nome": "ENARE",
    "total": 100
@@ -17,48 +22,52 @@
   {
    "ano": 2024,
    "total": 100
+  },
+  {
+   "ano": 2025,
+   "total": 100
   }
  ],
  "eixos": [
   {
-   "nome": "diagnóstico",
-   "total": 39
-  },
-  {
    "nome": "conduta",
-   "total": 32
+   "total": 91
   },
   {
-   "nome": "complicações",
-   "total": 6
+   "nome": "diagnóstico",
+   "total": 59
   },
   {
    "nome": "classificação",
-   "total": 6
+   "total": 10
+  },
+  {
+   "nome": "prevenção",
+   "total": 8
+  },
+  {
+   "nome": "complicações",
+   "total": 8
+  },
+  {
+   "nome": "exames",
+   "total": 8
+  },
+  {
+   "nome": "ética e legal",
+   "total": 5
   },
   {
    "nome": "epidemiologia",
    "total": 5
   },
   {
-   "nome": "prevenção",
-   "total": 4
-  },
-  {
    "nome": "organização e gestão",
-   "total": 3
-  },
-  {
-   "nome": "exames",
-   "total": 2
+   "total": 4
   },
   {
    "nome": "etiologia",
    "total": 2
-  },
-  {
-   "nome": "ética e legal",
-   "total": 1
   }
  ],
  "blocos": [
@@ -85,6 +94,17 @@
  ],
  "provas": [
   {
+   "chave": "ENAMED||2025||ENAMED",
+   "banca": "ENAMED",
+   "ano": 2025,
+   "ciclo": "2025",
+   "prova": "ENAMED",
+   "cadernos": [
+    "Caderno 1"
+   ],
+   "total": 100
+  },
+  {
    "chave": "ENARE||2024||Acesso Direto",
    "banca": "ENARE",
    "ano": 2024,
@@ -99,11 +119,11 @@
  "areas": [
   {
    "nome": "Clínica Médica",
-   "total": 29,
+   "total": 66,
    "especialidades": [
     {
      "nome": "Cardiologia",
-     "total": 4,
+     "total": 7,
      "temas": [
       {
        "nome": "Hipertensão arterial secundária",
@@ -111,7 +131,15 @@
       },
       {
        "nome": "Hipertensão arterial sistêmica",
-       "total": 2
+       "total": 3
+      },
+      {
+       "nome": "Insuficiência cardíaca com fração de ejeção reduzida",
+       "total": 1
+      },
+      {
+       "nome": "Síndrome coronariana aguda sem supradesnivelamento do segmento ST",
+       "total": 1
       },
       {
        "nome": "Valvopatias",
@@ -121,10 +149,14 @@
     },
     {
      "nome": "Pneumologia",
-     "total": 2,
+     "total": 3,
      "temas": [
       {
        "nome": "Asma",
+       "total": 1
+      },
+      {
+       "nome": "Derrame pleural",
        "total": 1
       },
       {
@@ -135,18 +167,42 @@
     },
     {
      "nome": "Gastroenterologia",
-     "total": 1,
+     "total": 6,
      "temas": [
       {
+       "nome": "Coledocolitíase",
+       "total": 1
+      },
+      {
        "nome": "Esofagite eosinofílica",
+       "total": 1
+      },
+      {
+       "nome": "Neoplasia de cabeça de pâncreas",
+       "total": 1
+      },
+      {
+       "nome": "Neoplasia de pâncreas",
+       "total": 1
+      },
+      {
+       "nome": "Pancreatite crônica",
+       "total": 1
+      },
+      {
+       "nome": "Supercrescimento bacteriano do intestino delgado",
        "total": 1
       }
      ]
     },
     {
      "nome": "Hepatologia",
-     "total": 3,
+     "total": 4,
      "temas": [
+      {
+       "nome": "Colangite esclerosante primária",
+       "total": 1
+      },
       {
        "nome": "Doenças colestáticas",
        "total": 1
@@ -162,25 +218,51 @@
      ]
     },
     {
-     "nome": "Endocrinologia",
-     "total": 2,
+     "nome": "Nefrologia",
+     "total": 1,
      "temas": [
       {
-       "nome": "Diabetes mellitus",
+       "nome": "Síndrome nefrótica",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Endocrinologia",
+     "total": 5,
+     "temas": [
+      {
+       "nome": "Cetoacidose diabética",
        "total": 1
       },
       {
+       "nome": "Diabetes mellitus",
+       "total": 2
+      },
+      {
        "nome": "Pé diabético",
+       "total": 1
+      },
+      {
+       "nome": "Tireoidite subaguda (de Quervain)",
        "total": 1
       }
      ]
     },
     {
      "nome": "Reumatologia",
-     "total": 4,
+     "total": 7,
      "temas": [
       {
        "nome": "Arterite de células gigantes",
+       "total": 2
+      },
+      {
+       "nome": "Artrite reumatoide",
+       "total": 1
+      },
+      {
+       "nome": "Espondilite anquilosante",
        "total": 1
       },
       {
@@ -199,7 +281,7 @@
     },
     {
      "nome": "Hematologia",
-     "total": 3,
+     "total": 4,
      "temas": [
       {
        "nome": "Anemia megaloblástica",
@@ -212,13 +294,25 @@
       {
        "nome": "Porfirias",
        "total": 1
+      },
+      {
+       "nome": "Trombofilia hereditária",
+       "total": 1
       }
      ]
     },
     {
      "nome": "Infectologia",
-     "total": 5,
+     "total": 11,
      "temas": [
+      {
+       "nome": "Cancro mole",
+       "total": 1
+      },
+      {
+       "nome": "Dengue",
+       "total": 1
+      },
       {
        "nome": "Herpes-zóster",
        "total": 1
@@ -236,15 +330,39 @@
        "total": 1
       },
       {
+       "nome": "Malária",
+       "total": 1
+      },
+      {
+       "nome": "Profilaxia pós-exposição sexual ao HIV",
+       "total": 1
+      },
+      {
+       "nome": "Profilaxia pré e pós-exposição ao HIV",
+       "total": 1
+      },
+      {
        "nome": "Síndromes febris agudas",
+       "total": 1
+      },
+      {
+       "nome": "Tuberculose",
        "total": 1
       }
      ]
     },
     {
      "nome": "Neurologia",
-     "total": 1,
+     "total": 3,
      "temas": [
+      {
+       "nome": "Acidente vascular encefálico isquêmico",
+       "total": 1
+      },
+      {
+       "nome": "Doença de Parkinson",
+       "total": 1
+      },
       {
        "nome": "Paralisias flácidas agudas",
        "total": 1
@@ -253,10 +371,38 @@
     },
     {
      "nome": "Psiquiatria",
-     "total": 2,
+     "total": 9,
      "temas": [
       {
+       "nome": "Anorexia nervosa",
+       "total": 1
+      },
+      {
+       "nome": "Distonia aguda induzida por antipsicótico",
+       "total": 1
+      },
+      {
+       "nome": "Luto",
+       "total": 1
+      },
+      {
+       "nome": "Risco de suicídio",
+       "total": 1
+      },
+      {
        "nome": "Síndrome neuroléptica maligna",
+       "total": 1
+      },
+      {
+       "nome": "Transtorno de oposição desafiante",
+       "total": 1
+      },
+      {
+       "nome": "Transtorno obsessivo-compulsivo",
+       "total": 1
+      },
+      {
+       "nome": "Transtorno por uso de álcool",
        "total": 1
       },
       {
@@ -267,8 +413,12 @@
     },
     {
      "nome": "Dermatologia",
-     "total": 1,
+     "total": 2,
      "temas": [
+      {
+       "nome": "Esporotricose",
+       "total": 1
+      },
       {
        "nome": "Farmacodermias",
        "total": 1
@@ -277,10 +427,28 @@
     },
     {
      "nome": "Geriatria",
-     "total": 1,
+     "total": 2,
      "temas": [
       {
        "nome": "Funcionalidade do idoso",
+       "total": 1
+      },
+      {
+       "nome": "Quedas em idosos",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Emergência e Terapia Intensiva",
+     "total": 2,
+     "temas": [
+      {
+       "nome": "Intoxicação por benzodiazepínicos",
+       "total": 1
+      },
+      {
+       "nome": "Sepse",
        "total": 1
       }
      ]
@@ -289,18 +457,22 @@
   },
   {
    "nome": "Cirurgia",
-   "total": 21,
+   "total": 34,
    "especialidades": [
     {
      "nome": "Cirurgia Geral",
-     "total": 4,
+     "total": 6,
      "temas": [
       {
        "nome": "Apendicite aguda",
-       "total": 1
+       "total": 2
       },
       {
        "nome": "Distensão colônica aguda",
+       "total": 1
+      },
+      {
+       "nome": "Hérnia femoral encarcerada",
        "total": 1
       },
       {
@@ -337,11 +509,11 @@
     },
     {
      "nome": "Coloproctologia",
-     "total": 3,
+     "total": 6,
      "temas": [
       {
-       "nome": "Doença diverticular",
-       "total": 1
+       "nome": "Doença diverticular do cólon",
+       "total": 3
       },
       {
        "nome": "Doença hemorroidária",
@@ -350,15 +522,31 @@
       {
        "nome": "Doença inflamatória intestinal",
        "total": 1
+      },
+      {
+       "nome": "Fissura anal",
+       "total": 1
       }
      ]
     },
     {
      "nome": "Trauma",
-     "total": 3,
+     "total": 7,
      "temas": [
       {
        "nome": "Choque hemorrágico",
+       "total": 1
+      },
+      {
+       "nome": "Hematoma epidural",
+       "total": 1
+      },
+      {
+       "nome": "Hemorragia exsanguinante em extremidade",
+       "total": 1
+      },
+      {
+       "nome": "Pneumotórax hipertensivo",
        "total": 1
       },
       {
@@ -367,6 +555,20 @@
       },
       {
        "nome": "Trauma torácico",
+       "total": 1
+      },
+      {
+       "nome": "Traumatismo cranioencefálico leve",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Cirurgia de Cabeça e Pescoço",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Complicações da tireoidectomia",
        "total": 1
       }
      ]
@@ -387,20 +589,28 @@
     },
     {
      "nome": "Cirurgia Pediátrica",
-     "total": 1,
+     "total": 2,
      "temas": [
       {
        "nome": "Constipação crônica",
+       "total": 1
+      },
+      {
+       "nome": "Fimose",
        "total": 1
       }
      ]
     },
     {
      "nome": "Ortopedia e Traumatologia",
-     "total": 2,
+     "total": 3,
      "temas": [
       {
        "nome": "Fraturas",
+       "total": 1
+      },
+      {
+       "nome": "Lombalgia mecânica",
        "total": 1
       },
       {
@@ -420,6 +630,16 @@
      ]
     },
     {
+     "nome": "Oftalmologia",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Queimadura química ocular",
+       "total": 1
+      }
+     ]
+    },
+    {
      "nome": "Anestesiologia",
      "total": 1,
      "temas": [
@@ -433,11 +653,11 @@
   },
   {
    "nome": "Ginecologia e Obstetrícia",
-   "total": 22,
+   "total": 40,
    "especialidades": [
     {
      "nome": "Obstetrícia",
-     "total": 9,
+     "total": 18,
      "temas": [
       {
        "nome": "Abortamento",
@@ -445,6 +665,14 @@
       },
       {
        "nome": "Arboviroses na gestação",
+       "total": 1
+      },
+      {
+       "nome": "Descolamento prematuro de placenta",
+       "total": 1
+      },
+      {
+       "nome": "Diabetes mellitus gestacional",
        "total": 1
       },
       {
@@ -456,11 +684,23 @@
        "total": 1
       },
       {
+       "nome": "Gestação pós-termo",
+       "total": 1
+      },
+      {
        "nome": "Hemorragia pós-parto",
        "total": 1
       },
       {
+       "nome": "Hipertensão arterial crônica na gestação",
+       "total": 1
+      },
+      {
        "nome": "Infecções congênitas",
+       "total": 1
+      },
+      {
+       "nome": "Insuficiência istmocervical",
        "total": 1
       },
       {
@@ -472,6 +712,22 @@
        "total": 1
       },
       {
+       "nome": "Pré-natal de alto risco",
+       "total": 1
+      },
+      {
+       "nome": "Rotura prematura de membranas pré-termo",
+       "total": 1
+      },
+      {
+       "nome": "Sífilis na gestação",
+       "total": 1
+      },
+      {
+       "nome": "Terceiro período do parto (dequitação)",
+       "total": 1
+      },
+      {
        "nome": "Vacinação na gestação",
        "total": 1
       }
@@ -479,18 +735,38 @@
     },
     {
      "nome": "Ginecologia",
-     "total": 9,
+     "total": 14,
      "temas": [
       {
        "nome": "Abdome agudo ginecológico",
        "total": 2
       },
       {
+       "nome": "Achados citológicos cervicais anormais",
+       "total": 1
+      },
+      {
+       "nome": "Candidíase vulvovaginal",
+       "total": 1
+      },
+      {
        "nome": "Climatério",
        "total": 1
       },
       {
+       "nome": "Endometriose",
+       "total": 1
+      },
+      {
+       "nome": "Hiperplasia endometrial",
+       "total": 1
+      },
+      {
        "nome": "Infecções sexualmente transmissíveis",
+       "total": 1
+      },
+      {
+       "nome": "Lesão intraepitelial escamosa de baixo grau",
        "total": 1
       },
       {
@@ -542,17 +818,53 @@
        "total": 1
       }
      ]
+    },
+    {
+     "nome": "Reprodução Humana e Planejamento Reprodutivo",
+     "total": 3,
+     "temas": [
+      {
+       "nome": "Contracepção em situações especiais",
+       "total": 1
+      },
+      {
+       "nome": "Contracepção hormonal combinada",
+       "total": 1
+      },
+      {
+       "nome": "Planejamento contraceptivo no pré-operatório de cirurgia bariátrica",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Endocrinologia Ginecológica",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Síndrome de insensibilidade androgênica",
+       "total": 1
+      }
+     ]
     }
    ]
   },
   {
    "nome": "Pediatria",
-   "total": 16,
+   "total": 32,
    "especialidades": [
     {
      "nome": "Neonatologia",
-     "total": 1,
+     "total": 3,
      "temas": [
+      {
+       "nome": "Choque séptico neonatal",
+       "total": 1
+      },
+      {
+       "nome": "Hérnia diafragmática congênita",
+       "total": 1
+      },
       {
        "nome": "Icterícia neonatal",
        "total": 1
@@ -561,7 +873,7 @@
     },
     {
      "nome": "Puericultura",
-     "total": 4,
+     "total": 6,
      "temas": [
       {
        "nome": "Aleitamento materno",
@@ -576,6 +888,14 @@
        "total": 1
       },
       {
+       "nome": "Reflexos primitivos",
+       "total": 1
+      },
+      {
+       "nome": "Síndrome de Down",
+       "total": 1
+      },
+      {
        "nome": "Violência contra criança e adolescente",
        "total": 1
       }
@@ -583,11 +903,11 @@
     },
     {
      "nome": "Imunização",
-     "total": 4,
+     "total": 5,
      "temas": [
       {
        "nome": "Calendário vacinal do adolescente",
-       "total": 1
+       "total": 2
       },
       {
        "nome": "Doenças imunopreveníveis",
@@ -618,6 +938,16 @@
      ]
     },
     {
+     "nome": "Pneumologia Pediátrica",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Exacerbação aguda da asma",
+       "total": 1
+      }
+     ]
+    },
+    {
      "nome": "Gastroenterologia Pediátrica",
      "total": 2,
      "temas": [
@@ -633,8 +963,12 @@
     },
     {
      "nome": "Cardiologia Pediátrica",
-     "total": 1,
+     "total": 2,
      "temas": [
+      {
+       "nome": "Febre reumática",
+       "total": 1
+      },
       {
        "nome": "Sopros cardíacos",
        "total": 1
@@ -643,8 +977,12 @@
     },
     {
      "nome": "Nefrologia Pediátrica",
-     "total": 1,
+     "total": 2,
      "temas": [
+      {
+       "nome": "Acidose tubular renal",
+       "total": 1
+      },
       {
        "nome": "Síndrome hemolítico-urêmica",
        "total": 1
@@ -653,10 +991,60 @@
     },
     {
      "nome": "Neurologia Pediátrica",
+     "total": 4,
+     "temas": [
+      {
+       "nome": "Crise febril",
+       "total": 1
+      },
+      {
+       "nome": "Esclerose tuberosa",
+       "total": 1
+      },
+      {
+       "nome": "Transtorno de déficit de atenção e hiperatividade (TDAH)",
+       "total": 1
+      },
+      {
+       "nome": "Transtorno do espectro autista",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Hematologia Pediátrica",
      "total": 1,
      "temas": [
       {
-       "nome": "Transtorno do espectro autista",
+       "nome": "Anemia ferropriva",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Endocrinologia Pediátrica",
+     "total": 3,
+     "temas": [
+      {
+       "nome": "Baixa estatura",
+       "total": 1
+      },
+      {
+       "nome": "Cetoacidose diabética",
+       "total": 1
+      },
+      {
+       "nome": "Obesidade na infância e adolescência",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Emergência Pediátrica",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Sepse",
        "total": 1
       }
      ]
@@ -665,11 +1053,31 @@
   },
   {
    "nome": "Medicina Preventiva e Social",
-   "total": 12,
+   "total": 28,
    "especialidades": [
     {
+     "nome": "Epidemiologia",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Delineamento de estudos epidemiológicos",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Bioestatística",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Acurácia de teste diagnóstico",
+       "total": 1
+      }
+     ]
+    },
+    {
      "nome": "Atenção Primária e Medicina de Família",
-     "total": 6,
+     "total": 11,
      "temas": [
       {
        "nome": "Abordagem familiar",
@@ -680,7 +1088,27 @@
        "total": 1
       },
       {
+       "nome": "Calendário de vacinação do idoso",
+       "total": 1
+      },
+      {
+       "nome": "Competência cultural na atenção primária",
+       "total": 1
+      },
+      {
+       "nome": "Níveis de atenção e prevenção em saúde",
+       "total": 1
+      },
+      {
+       "nome": "Processo transexualizador",
+       "total": 1
+      },
+      {
        "nome": "Projeto terapêutico singular",
+       "total": 1
+      },
+      {
+       "nome": "Rastreamento em adultos",
        "total": 1
       },
       {
@@ -695,10 +1123,14 @@
     },
     {
      "nome": "Vigilância em Saúde",
-     "total": 6,
+     "total": 10,
      "temas": [
       {
        "nome": "Cólera",
+       "total": 1
+      },
+      {
+       "nome": "Escabiose",
        "total": 1
       },
       {
@@ -706,7 +1138,15 @@
        "total": 1
       },
       {
+       "nome": "Manejo integrado de vetores (Aedes sp)",
+       "total": 1
+      },
+      {
        "nome": "Mpox",
+       "total": 1
+      },
+      {
+       "nome": "Profilaxia da raiva humana",
        "total": 1
       },
       {
@@ -719,6 +1159,44 @@
       },
       {
        "nome": "Tuberculose",
+       "total": 2
+      }
+     ]
+    },
+    {
+     "nome": "Saúde do Trabalhador",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Intoxicação aguda por agrotóxicos",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Ética Médica e Bioética",
+     "total": 2,
+     "temas": [
+      {
+       "nome": "Internação psiquiátrica involuntária",
+       "total": 1
+      },
+      {
+       "nome": "Maus-tratos e violência contra criança e adolescente",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Medicina Legal",
+     "total": 2,
+     "temas": [
+      {
+       "nome": "Declaração de óbito",
+       "total": 1
+      },
+      {
+       "nome": "Violência institucional contra o idoso",
        "total": 1
       }
      ]
