@@ -13,6 +13,7 @@ const DIR_Q = path.join(RAIZ, 'banco', 'questoes');
 const DIR_IMG = path.join(RAIZ, 'banco', 'imagens');
 const SAIDA_DATA = path.join(APP, 'data');
 const SAIDA_IMG = path.join(APP, 'img');
+const SAIDA_PDF = path.join(APP, 'provas');
 
 export const BANCAS = ['ENAMED', 'ENARE', 'PSU-MG'];
 export const AREAS = {
@@ -88,6 +89,12 @@ export function montarReferencia(q) {
 }
 
 /** Normaliza para o formato enxuto usado pelo app. */
+/** Último trecho de um caminho tipo "provas_oficiais/ENARE/2024-2025/arquivo.pdf". */
+export function nomeArquivo(caminho) {
+  if (typeof caminho !== 'string' || !caminho.trim()) return '';
+  return caminho.split(/[\/]/).pop();
+}
+
 export function limparQuestao(q) {
   const anulada = q.anulada === true;
   return {
@@ -109,7 +116,13 @@ export function limparQuestao(q) {
     tema: (q.tema || '').trim() || 'Sem tema',
     subtema: q.subtema || '',
     tags: Array.isArray(q.tags) ? q.tags : [],
-    fonte: q.fonte ? { pagina: q.fonte.pagina ?? null, caderno_codigo: q.fonte.caderno_codigo || '' } : null,
+    fonte: q.fonte ? {
+      pagina: q.fonte.pagina ?? null,
+      caderno_codigo: q.fonte.caderno_codigo || '',
+      // só o nome do arquivo: o PDF é espelhado em app/provas/ e o link é montado no app
+      prova_arquivo: nomeArquivo(q.fonte.prova_pdf),
+      gabarito_arquivo: nomeArquivo(q.fonte.gabarito_pdf),
+    } : null,
     revisao: q.revisao ? { extracao_ok: q.revisao.extracao_ok !== false, classificacao_ok: q.revisao.classificacao_ok !== false, observacoes: q.revisao.observacoes || '' } : null,
   };
 }
@@ -243,6 +256,35 @@ function principal() {
     fs.copyFileSync(de, para); copiadas++;
   }
 
+  // PDFs: espelha para app/provas/ os cadernos e gabaritos citados pelas questões,
+  // para o app poder abrir o caderno oficial na página exata da questão.
+  fs.mkdirSync(SAIDA_PDF, { recursive: true });
+  const pdfsCitados = new Map(); // nome do arquivo -> caminho de origem
+  for (const arq of usar) {
+    let brutos;
+    try { brutos = JSON.parse(fs.readFileSync(path.join(DIR_Q, arq), 'utf8').replace(/^﻿/, '')); } catch (e) { continue; }
+    if (!Array.isArray(brutos)) continue;
+    for (const q of brutos) {
+      if (!q || !q.fonte) continue;
+      for (const campo of ['prova_pdf', 'gabarito_pdf']) {
+        const caminho = q.fonte[campo];
+        if (typeof caminho !== 'string' || !caminho.toLowerCase().endsWith('.pdf')) continue;
+        const nome = nomeArquivo(caminho);
+        const de = path.resolve(RAIZ, caminho);
+        if (fs.existsSync(de)) pdfsCitados.set(nome, de);
+        else console.warn(`AVISO PDF não encontrado: ${caminho} (o link do caderno não vai funcionar)`);
+      }
+    }
+  }
+  for (const f of fs.readdirSync(SAIDA_PDF)) if (!pdfsCitados.has(f)) fs.rmSync(path.join(SAIDA_PDF, f), { force: true, recursive: true });
+  let pdfsCopiados = 0;
+  for (const [nome, de] of pdfsCitados) {
+    const para = path.join(SAIDA_PDF, nome);
+    const sd = fs.statSync(de);
+    if (fs.existsSync(para) && fs.statSync(para).size === sd.size) continue;
+    fs.copyFileSync(de, para); pdfsCopiados++;
+  }
+
   if (avisosDetalhe.length) {
     console.log('\nAvisos (questões mantidas):');
     const max = process.argv.includes('--todos-avisos') ? Infinity : 40;
@@ -261,6 +303,7 @@ function principal() {
   console.log(`Provas: ${meta.provas.length} · Com imagem: ${meta.comImagem} · Anuladas: ${meta.anuladas}`);
   console.log(`Por área: ${meta.areas.map((a) => `${a.nome} ${a.total}`).join(' · ') || '—'}`);
   console.log(`Imagens: ${imagensUsaveis.length} disponíveis, ${copiadas} copiadas/atualizadas`);
+  console.log(`PDFs em provas/: ${pdfsCitados.size} (${pdfsCopiados} copiados/atualizados)`);
   console.log(`Saída: ${path.relative(RAIZ, SAIDA_DATA)}/questoes.json, meta.json  (${Date.now() - inicio} ms)`);
 }
 

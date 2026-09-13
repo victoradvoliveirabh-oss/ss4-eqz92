@@ -591,3 +591,11 @@ body.escuro .arvore mark { background: #5a4a12; color: #ffe9a8; }
   padding: 9px 12px; margin-bottom: 14px; font-size: .82rem; color: var(--tinta-2);
 }
 .aviso-extracao.grave { border-color: #e6c99a; border-left-color: var(--ambar); background: var(--ambar-claro); color: var(--ambar); }
+
+/* Links para os PDFs oficiais na caixa de gabarito */
+.links-fonte { display: inline-flex; flex-wrap: wrap; gap: 8px; margin-left: 4px; }
+.link-fonte {
+  font-weight: 700; text-decoration: none; color: var(--marca-forte);
+  border-bottom: 1px dashed currentColor;
+}
+.link-fonte:hover { color: var(--tinta); }

@@ -219,6 +219,24 @@ export function referenciaHTML(q, { extra = '' } = {}) {
   </div>`;
 }
 
+/**
+ * Links para os PDFs oficiais da questão (espelhados em provas/ pelo build).
+ * O caderno abre direto na página da questão (#page=N, entendido pelos leitores de PDF).
+ */
+export function linksFonteHTML(q) {
+  const f = q.fonte || {};
+  const links = [];
+  if (f.prova_arquivo) {
+    const pag = f.pagina ? `#page=${encodeURIComponent(f.pagina)}` : '';
+    links.push(`<a class="link-fonte" href="provas/${encodeURIComponent(f.prova_arquivo)}${pag}" target="_blank" rel="noopener">
+      caderno de prova${f.pagina ? ` (pág. ${esc(f.pagina)})` : ''} ↗</a>`);
+  }
+  if (f.gabarito_arquivo) {
+    links.push(`<a class="link-fonte" href="provas/${encodeURIComponent(f.gabarito_arquivo)}" target="_blank" rel="noopener">gabarito oficial ↗</a>`);
+  }
+  return links.join(' · ');
+}
+
 export function classificacaoHTML(q) {
   return `<span class="classif">${esc(q.grande_area)} › ${esc(q.especialidade)} › ${esc(q.tema)}${q.subtema ? ` <span class="subtema">(${esc(q.subtema)})</span>` : ''}</span>`;
 }
