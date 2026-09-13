@@ -1,82 +1,204 @@
 {
- "geradoEm": "2026-09-13T02:34:18.186Z",
- "modoExemplo": true,
+ "geradoEm": "2026-09-13T02:45:16.539Z",
+ "modoExemplo": false,
  "arquivos": [
-  "_EXEMPLO.json"
+  "ENARE_2023-2024.json"
  ],
- "total": 6,
- "comImagem": 1,
- "anuladas": 1,
+ "total": 100,
+ "comImagem": 0,
+ "anuladas": 0,
  "bancas": [
   {
-   "nome": "ENAMED",
-   "total": 1
-  },
-  {
    "nome": "ENARE",
-   "total": 3
-  },
-  {
-   "nome": "PSU-MG",
-   "total": 2
+   "total": 100
   }
  ],
  "anos": [
   {
-   "ano": 2098,
-   "total": 2
-  },
-  {
-   "ano": 2099,
-   "total": 4
+   "ano": 2023,
+   "total": 100
   }
  ],
  "provas": [
   {
-   "chave": "ENAMED||2099||ENAMED",
-   "banca": "ENAMED",
-   "ano": 2099,
-   "ciclo": "2099",
-   "prova": "ENAMED",
-   "cadernos": [
-    "Único"
-   ],
-   "total": 1
-  },
-  {
-   "chave": "ENARE||2099||Acesso Direto",
+   "chave": "ENARE||2023||Acesso Direto",
    "banca": "ENARE",
-   "ano": 2099,
-   "ciclo": "2099-2100",
+   "ano": 2023,
+   "ciclo": "2023-2024",
    "prova": "Acesso Direto",
    "cadernos": [
-    "Tipo 1"
+    "T1361001N - Tipo 01 (Prova 01)"
    ],
-   "total": 3
-  },
-  {
-   "chave": "PSU-MG||2098||Prova Geral",
-   "banca": "PSU-MG",
-   "ano": 2098,
-   "ciclo": "2098",
-   "prova": "Prova Geral",
-   "cadernos": [
-    "Caderno Azul"
-   ],
-   "total": 2
+   "total": 100
   }
  ],
  "areas": [
   {
    "nome": "Clínica Médica",
-   "total": 1,
+   "total": 23,
    "especialidades": [
     {
      "nome": "Cardiologia",
+     "total": 2,
+     "temas": [
+      {
+       "nome": "Infarto agudo do miocárdio com supra de ST",
+       "total": 1
+      },
+      {
+       "nome": "Taquiarritmias",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Pneumologia",
+     "total": 3,
+     "temas": [
+      {
+       "nome": "Derrame pleural",
+       "total": 1
+      },
+      {
+       "nome": "Pneumonia adquirida na comunidade",
+       "total": 2
+      }
+     ]
+    },
+    {
+     "nome": "Gastroenterologia",
      "total": 1,
      "temas": [
       {
-       "nome": "Insuficiência cardíaca",
+       "nome": "Doença inflamatória intestinal",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Hepatologia",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Cirrose hepática",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Nefrologia",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Doença renal crônica",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Endocrinologia",
+     "total": 3,
+     "temas": [
+      {
+       "nome": "Diabetes mellitus tipo 2",
+       "total": 1
+      },
+      {
+       "nome": "Hipocalcemia",
+       "total": 1
+      },
+      {
+       "nome": "Osteoporose",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Reumatologia",
+     "total": 2,
+     "temas": [
+      {
+       "nome": "Artrite psoriática",
+       "total": 1
+      },
+      {
+       "nome": "Artrite reumatoide",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Oncologia",
+     "total": 2,
+     "temas": [
+      {
+       "nome": "Câncer de pulmão",
+       "total": 1
+      },
+      {
+       "nome": "Comunicação de más notícias",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Infectologia",
+     "total": 3,
+     "temas": [
+      {
+       "nome": "Hanseníase",
+       "total": 1
+      },
+      {
+       "nome": "HIV/aids",
+       "total": 1
+      },
+      {
+       "nome": "Sífilis",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Neurologia",
+     "total": 2,
+     "temas": [
+      {
+       "nome": "Doença de Parkinson",
+       "total": 1
+      },
+      {
+       "nome": "Paralisia facial",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Psiquiatria",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Síndrome de abstinência alcoólica",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Geriatria",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Avaliação geriátrica ampla",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Emergência Clínica",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Parada cardiorrespiratória",
        "total": 1
       }
      ]
@@ -85,14 +207,90 @@
   },
   {
    "nome": "Cirurgia",
-   "total": 1,
+   "total": 16,
    "especialidades": [
     {
-     "nome": "Trauma",
+     "nome": "Cirurgia Geral",
+     "total": 7,
+     "temas": [
+      {
+       "nome": "Apendicite aguda",
+       "total": 2
+      },
+      {
+       "nome": "Cicatrização de feridas",
+       "total": 1
+      },
+      {
+       "nome": "Obstrução intestinal",
+       "total": 2
+      },
+      {
+       "nome": "Profilaxia de tromboembolismo venoso",
+       "total": 1
+      },
+      {
+       "nome": "Tireoidectomia",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Cirurgia do Aparelho Digestivo",
+     "total": 4,
+     "temas": [
+      {
+       "nome": "Cirrose hepática",
+       "total": 1
+      },
+      {
+       "nome": "Colangite aguda",
+       "total": 1
+      },
+      {
+       "nome": "Complicações pós-gastrectomia",
+       "total": 1
+      },
+      {
+       "nome": "Pancreatite aguda",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Coloproctologia",
+     "total": 2,
+     "temas": [
+      {
+       "nome": "Câncer colorretal",
+       "total": 1
+      },
+      {
+       "nome": "Doença diverticular",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Cirurgia Plástica e Queimados",
+     "total": 2,
+     "temas": [
+      {
+       "nome": "Feridas e suturas",
+       "total": 1
+      },
+      {
+       "nome": "Melanoma",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Anestesiologia",
      "total": 1,
      "temas": [
       {
-       "nome": "Atendimento inicial ao politraumatizado",
+       "nome": "Indução anestésica",
        "total": 1
       }
      ]
@@ -101,14 +299,108 @@
   },
   {
    "nome": "Ginecologia e Obstetrícia",
-   "total": 1,
+   "total": 21,
    "especialidades": [
     {
      "nome": "Obstetrícia",
+     "total": 10,
+     "temas": [
+      {
+       "nome": "Doença trofoblástica gestacional",
+       "total": 1
+      },
+      {
+       "nome": "Fisiologia fetal",
+       "total": 1
+      },
+      {
+       "nome": "Hemorragia pós-parto",
+       "total": 1
+      },
+      {
+       "nome": "Infecções na gestação",
+       "total": 1
+      },
+      {
+       "nome": "Parto operatório",
+       "total": 1
+      },
+      {
+       "nome": "Pré-eclâmpsia",
+       "total": 1
+      },
+      {
+       "nome": "Pré-natal",
+       "total": 2
+      },
+      {
+       "nome": "Restrição de crescimento fetal",
+       "total": 1
+      },
+      {
+       "nome": "Trombofilias",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Ginecologia",
+     "total": 8,
+     "temas": [
+      {
+       "nome": "Contracepção",
+       "total": 1
+      },
+      {
+       "nome": "Doença inflamatória pélvica",
+       "total": 1
+      },
+      {
+       "nome": "Doenças da vulva",
+       "total": 1
+      },
+      {
+       "nome": "Fisiologia ovariana",
+       "total": 1
+      },
+      {
+       "nome": "Infecções sexualmente transmissíveis",
+       "total": 1
+      },
+      {
+       "nome": "Lesões benignas da vagina",
+       "total": 1
+      },
+      {
+       "nome": "Planejamento reprodutivo",
+       "total": 1
+      },
+      {
+       "nome": "Vulvovaginites",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Mastologia",
      "total": 1,
      "temas": [
       {
-       "nome": "Pré-eclâmpsia",
+       "nome": "Rastreamento do câncer de mama",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Oncoginecologia",
+     "total": 2,
+     "temas": [
+      {
+       "nome": "Câncer de ovário",
+       "total": 1
+      },
+      {
+       "nome": "Sangramento pós-menopausa",
        "total": 1
       }
      ]
@@ -117,24 +409,148 @@
   },
   {
    "nome": "Pediatria",
-   "total": 2,
+   "total": 21,
    "especialidades": [
     {
      "nome": "Neonatologia",
-     "total": 1,
+     "total": 2,
      "temas": [
       {
-       "nome": "Icterícia neonatal",
+       "nome": "Aleitamento materno",
+       "total": 1
+      },
+      {
+       "nome": "Displasia do desenvolvimento do quadril",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Puericultura",
+     "total": 5,
+     "temas": [
+      {
+       "nome": "Crescimento",
+       "total": 1
+      },
+      {
+       "nome": "Diabetes mellitus na infância",
+       "total": 1
+      },
+      {
+       "nome": "Doença falciforme",
+       "total": 1
+      },
+      {
+       "nome": "Doenças hematológicas na infância",
+       "total": 1
+      },
+      {
+       "nome": "Obesidade infantil",
        "total": 1
       }
      ]
     },
     {
      "nome": "Infectologia Pediátrica",
+     "total": 2,
+     "temas": [
+      {
+       "nome": "Doenças exantemáticas",
+       "total": 1
+      },
+      {
+       "nome": "Pneumopatias infecciosas na infância",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Emergência Pediátrica",
+     "total": 3,
+     "temas": [
+      {
+       "nome": "Abdome agudo na infância",
+       "total": 1
+      },
+      {
+       "nome": "Anafilaxia",
+       "total": 1
+      },
+      {
+       "nome": "Cetoacidose diabética",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Pneumologia Pediátrica",
+     "total": 3,
+     "temas": [
+      {
+       "nome": "Bronquiolite viral aguda",
+       "total": 1
+      },
+      {
+       "nome": "Derrame pleural parapneumônico",
+       "total": 1
+      },
+      {
+       "nome": "Insuficiência respiratória",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Gastroenterologia Pediátrica",
+     "total": 2,
+     "temas": [
+      {
+       "nome": "Alergia à proteína do leite de vaca",
+       "total": 1
+      },
+      {
+       "nome": "Diarreia aguda",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Nefrologia Pediátrica",
      "total": 1,
      "temas": [
       {
-       "nome": "Febre sem sinais localizatórios",
+       "nome": "Síndrome hemolítico-urêmica",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Cardiologia Pediátrica",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Sopros cardíacos",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Neurologia Pediátrica",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Epilepsia",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Imunização",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Hesitação vacinal",
        "total": 1
       }
      ]
@@ -143,14 +559,106 @@
   },
   {
    "nome": "Medicina Preventiva e Social",
-   "total": 1,
+   "total": 19,
    "especialidades": [
     {
      "nome": "Epidemiologia",
-     "total": 1,
+     "total": 2,
      "temas": [
       {
        "nome": "Estudos epidemiológicos",
+       "total": 1
+      },
+      {
+       "nome": "Imunização",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Saúde Pública e SUS",
+     "total": 2,
+     "temas": [
+      {
+       "nome": "Determinantes sociais da saúde",
+       "total": 1
+      },
+      {
+       "nome": "Segurança do paciente",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Medicina de Família e Comunidade",
+     "total": 7,
+     "temas": [
+      {
+       "nome": "Faringoamigdalite estreptocócica",
+       "total": 1
+      },
+      {
+       "nome": "Hipertensão arterial",
+       "total": 1
+      },
+      {
+       "nome": "Método clínico centrado na pessoa",
+       "total": 2
+      },
+      {
+       "nome": "Promoção da saúde",
+       "total": 1
+      },
+      {
+       "nome": "Rastreamento",
+       "total": 1
+      },
+      {
+       "nome": "Trabalho em equipe multiprofissional",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Vigilância em Saúde",
+     "total": 3,
+     "temas": [
+      {
+       "nome": "Febre maculosa",
+       "total": 1
+      },
+      {
+       "nome": "Meningites",
+       "total": 1
+      },
+      {
+       "nome": "Síndrome congênita do Zika",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Ética Médica e Medicina Legal",
+     "total": 5,
+     "temas": [
+      {
+       "nome": "Atos médicos e responsabilidade profissional",
+       "total": 1
+      },
+      {
+       "nome": "Autonomia do paciente",
+       "total": 1
+      },
+      {
+       "nome": "Publicidade médica",
+       "total": 1
+      },
+      {
+       "nome": "Sigilo e privacidade do paciente",
+       "total": 1
+      },
+      {
+       "nome": "Sigilo médico",
        "total": 1
       }
      ]
