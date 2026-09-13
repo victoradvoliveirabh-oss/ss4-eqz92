@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300">
+  <rect width="600" height="300" fill="#ffffff"/>
+  <text x="300" y="40" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#444">FIGURA FICTÍCIA DE EXEMPLO</text>
+  <g font-family="sans-serif" font-size="48" text-anchor="middle">
+    <text x="80" y="180" fill="#999">A</text>
+    <text x="190" y="180" fill="#999">B</text>
+    <circle cx="300" cy="163" r="45" fill="none" stroke="#d33" stroke-width="6"/>
+    <text x="300" y="180" fill="#d33">C</text>
+    <text x="410" y="180" fill="#999">D</text>
+    <text x="520" y="180" fill="#999">E</text>
+  </g>
+  <text x="300" y="270" font-family="sans-serif" font-size="14" text-anchor="middle" fill="#666">Imagem de teste sem significado clínico</text>
+</svg>

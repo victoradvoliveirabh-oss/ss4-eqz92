@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b1220">
+<title>Banco de Questões — Samanta</title>
+<link rel="stylesheet" href="css/estilo.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2300875a'/><path d='M20 34h24M32 22v24' stroke='white' stroke-width='7' stroke-linecap='round'/></svg>">
+</head>
+<body data-tema="auto">
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="layout">
+
+  <!-- Barra lateral (desktop) -->
+  <aside class="lateral" id="lateral">
+    <div class="marca">
+      <span class="marca-logo" aria-hidden="true">+</span>
+      <span class="marca-txt">Banco de Questões<small>Samanta · residência médica</small></span>
+    </div>
+
+    <nav class="nav" aria-label="Seções">
+      <a class="nav-item" href="#/inicio"     data-rota="/inicio"><span class="nav-ico" aria-hidden="true">◆</span>Início</a>
+      <a class="nav-item" href="#/filtrar"    data-rota="/filtrar"><span class="nav-ico" aria-hidden="true">⚲</span>Filtrar questões</a>
+      <a class="nav-item" href="#/cadernos"   data-rota="/cadernos"><span class="nav-ico" aria-hidden="true">▤</span>Cadernos<span class="nav-badge" id="badge-cadernos" hidden></span></a>
+      <a class="nav-item" href="#/revisao"    data-rota="/revisao"><span class="nav-ico" aria-hidden="true">↻</span>Revisão<span class="nav-badge" id="badge-revisao" hidden></span></a>
+      <a class="nav-item" href="#/desempenho" data-rota="/desempenho"><span class="nav-ico" aria-hidden="true">▧</span>Desempenho</a>
+      <a class="nav-item" href="#/ajustes"    data-rota="/ajustes"><span class="nav-ico" aria-hidden="true">⚙</span>Ajustes</a>
+    </nav>
+
+    <div class="lateral-rodape">
+      <div class="lateral-stat" id="lateral-stat"></div>
+      <button type="button" class="btn btn-fantasma btn-bloco" data-acao="alternar-tema">Tema</button>
+    </div>
+  </aside>
+
+  <!-- Topo (mobile) -->
+  <header class="topo">
+    <button type="button" class="btn-icone" data-acao="abrir-menu" aria-label="Abrir menu">☰</button>
+    <span class="topo-titulo" id="topo-titulo">Banco de Questões</span>
+    <button type="button" class="btn-icone" data-acao="alternar-tema" aria-label="Alternar tema">◐</button>
+  </header>
+
+  <main class="conteudo" id="conteudo" tabindex="-1">
+    <div class="carregando" id="carregando"><span class="girando" aria-hidden="true"></span> Carregando o banco de questões…</div>
+    <div id="view" hidden></div>
+  </main>
+
+  <!-- Navegação inferior (mobile) -->
+  <nav class="nav-baixo" aria-label="Seções">
+    <a class="nav-baixo-item" href="#/inicio"     data-rota="/inicio"><span aria-hidden="true">◆</span>Início</a>
+    <a class="nav-baixo-item" href="#/filtrar"    data-rota="/filtrar"><span aria-hidden="true">⚲</span>Filtrar</a>
+    <a class="nav-baixo-item" href="#/cadernos"   data-rota="/cadernos"><span aria-hidden="true">▤</span>Cadernos</a>
+    <a class="nav-baixo-item" href="#/revisao"    data-rota="/revisao"><span aria-hidden="true">↻</span>Revisão</a>
+    <a class="nav-baixo-item" href="#/desempenho" data-rota="/desempenho"><span aria-hidden="true">▧</span>Desempenho</a>
+  </nav>
+
+  <div class="veu" id="veu" hidden></div>
+</div>
+
+<div id="toasts" aria-live="polite"></div>
+
+<noscript><p style="padding:24px">Este aplicativo precisa de JavaScript ativado.</p></noscript>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

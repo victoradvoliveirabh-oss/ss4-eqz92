@@ -1,0 +1,161 @@
+{
+ "geradoEm": "2026-09-13T02:34:18.186Z",
+ "modoExemplo": true,
+ "arquivos": [
+  "_EXEMPLO.json"
+ ],
+ "total": 6,
+ "comImagem": 1,
+ "anuladas": 1,
+ "bancas": [
+  {
+   "nome": "ENAMED",
+   "total": 1
+  },
+  {
+   "nome": "ENARE",
+   "total": 3
+  },
+  {
+   "nome": "PSU-MG",
+   "total": 2
+  }
+ ],
+ "anos": [
+  {
+   "ano": 2098,
+   "total": 2
+  },
+  {
+   "ano": 2099,
+   "total": 4
+  }
+ ],
+ "provas": [
+  {
+   "chave": "ENAMED||2099||ENAMED",
+   "banca": "ENAMED",
+   "ano": 2099,
+   "ciclo": "2099",
+   "prova": "ENAMED",
+   "cadernos": [
+    "Único"
+   ],
+   "total": 1
+  },
+  {
+   "chave": "ENARE||2099||Acesso Direto",
+   "banca": "ENARE",
+   "ano": 2099,
+   "ciclo": "2099-2100",
+   "prova": "Acesso Direto",
+   "cadernos": [
+    "Tipo 1"
+   ],
+   "total": 3
+  },
+  {
+   "chave": "PSU-MG||2098||Prova Geral",
+   "banca": "PSU-MG",
+   "ano": 2098,
+   "ciclo": "2098",
+   "prova": "Prova Geral",
+   "cadernos": [
+    "Caderno Azul"
+   ],
+   "total": 2
+  }
+ ],
+ "areas": [
+  {
+   "nome": "Clínica Médica",
+   "total": 1,
+   "especialidades": [
+    {
+     "nome": "Cardiologia",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Insuficiência cardíaca",
+       "total": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nome": "Cirurgia",
+   "total": 1,
+   "especialidades": [
+    {
+     "nome": "Trauma",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Atendimento inicial ao politraumatizado",
+       "total": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nome": "Ginecologia e Obstetrícia",
+   "total": 1,
+   "especialidades": [
+    {
+     "nome": "Obstetrícia",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Pré-eclâmpsia",
+       "total": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nome": "Pediatria",
+   "total": 2,
+   "especialidades": [
+    {
+     "nome": "Neonatologia",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Icterícia neonatal",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Infectologia Pediátrica",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Febre sem sinais localizatórios",
+       "total": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nome": "Medicina Preventiva e Social",
+   "total": 1,
+   "especialidades": [
+    {
+     "nome": "Epidemiologia",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Estudos epidemiológicos",
+       "total": 1
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

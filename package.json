@@ -1,0 +1,14 @@
+{
+  "name": "ss4-eqz92",
+  "private": true,
+  "type": "module",
+  "description": "Aplicativo web estático de uso pessoal",
+  "scripts": {
+    "dados": "node scripts/build-data.mjs",
+    "servir": "node scripts/serve.mjs",
+    "teste": "node scripts/test.mjs",
+    "artifact": "node scripts/build-artifact.mjs",
+    "publicar": "node scripts/publicar.mjs"
+  },
+  "homepage": "https://victoradvoliveirabh-oss.github.io/ss4-eqz92/"
+}
