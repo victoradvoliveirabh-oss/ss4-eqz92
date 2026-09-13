@@ -55,10 +55,14 @@ export const partesChave = (k) => String(k).split(SEP);
 // ---------------- Carregamento dos dados ----------------
 
 export async function carregarDados() {
-  const [questoes, meta] = await Promise.all([
-    fetch('data/questoes.json').then((r) => { if (!r.ok) throw new Error('questoes.json'); return r.json(); }),
-    fetch('data/meta.json').then((r) => { if (!r.ok) throw new Error('meta.json'); return r.json(); }),
-  ]);
+  // O meta é sempre revalidado; as questões vêm com a data do build na URL.
+  // Sem isso, o navegador (e o CDN do GitHub Pages) continuaria servindo o banco antigo
+  // depois de uma publicação.
+  const meta = await fetch('data/meta.json', { cache: 'no-cache' })
+    .then((r) => { if (!r.ok) throw new Error('meta.json'); return r.json(); });
+  const versao = encodeURIComponent(meta.geradoEm || '');
+  const questoes = await fetch(`data/questoes.json?v=${versao}`)
+    .then((r) => { if (!r.ok) throw new Error('questoes.json'); return r.json(); });
   estado.questoes = prepararQuestoes(questoes);
   estado.porId = new Map(questoes.map((q) => [q.id, q]));
   estado.meta = meta;
