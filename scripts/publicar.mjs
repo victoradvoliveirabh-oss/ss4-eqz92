@@ -15,7 +15,8 @@ const mensagem = process.argv.slice(2).join(' ') || `Atualiza o banco de questõ
 console.log('1/4 Gerando os dados a partir de banco/questoes/…');
 rodar(process.execPath, ['scripts/build-data.mjs']);
 
-console.log('\n2/4 Gerando a versão para o Artifact…');
+console.log('\n2/4 Carimbando a versão do build nos arquivos do site…');
+rodar(process.execPath, ['scripts/carimbar-versao.mjs', Date.now().toString(36)]);
 rodar(process.execPath, ['scripts/build-artifact.mjs']);
 
 console.log('\n3/4 Registrando as mudanças…');
