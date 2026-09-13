@@ -583,3 +583,11 @@ body.escuro .arvore mark { background: #5a4a12; color: #ffe9a8; }
   .conteudo { margin: 0; padding: 0; }
   .questao, .cartao { box-shadow: none; border-color: #ccc; }
 }
+
+/* Aviso de extração dentro da questão (figura pendente, gabarito preliminar…) */
+.aviso-extracao {
+  border: 1px solid var(--linha-forte); border-left: 4px solid var(--tinta-3);
+  background: var(--papel-2); border-radius: var(--r-p);
+  padding: 9px 12px; margin-bottom: 14px; font-size: .82rem; color: var(--tinta-2);
+}
+.aviso-extracao.grave { border-color: #e6c99a; border-left-color: var(--ambar); background: var(--ambar-claro); color: var(--ambar); }

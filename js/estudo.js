@@ -104,6 +104,7 @@ function desenhar() {
       <div>
         <article class="questao">
           ${ui.referenciaHTML(q)}
+          ${avisoRevisaoHTML(q)}
           <div class="enunciado">${ui.enunciadoHTML(q.enunciado)}</div>
           ${ui.imagensHTML(q)}
           <div id="alts">${ui.alternativasHTML(q, {
@@ -413,4 +414,20 @@ function teclado(e) {
     else if (revelado) avancar();
     else if (marcada) responder();
   }
+}
+
+/**
+ * Avisos da extração (figura que faltou, gabarito preliminar, etc.).
+ * Ficam gravados em revisao.observacoes pelas ferramentas do banco — é honesto
+ * mostrá-los a quem está resolvendo, em vez de deixar a questão parecer completa.
+ */
+function avisoRevisaoHTML(q) {
+  const r = q.revisao;
+  if (!r) return '';
+  const obs = String(r.observacoes || '').trim();
+  if (!obs) return '';
+  const grave = r.extracao_ok === false;
+  return `<div class="aviso-extracao${grave ? ' grave' : ''}">
+    <b>${grave ? 'Atenção' : 'Nota da extração'}:</b> ${esc(obs)}
+  </div>`;
 }
