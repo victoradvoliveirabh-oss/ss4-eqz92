@@ -602,3 +602,13 @@ body.escuro .arvore mark { background: #5a4a12; color: #ffe9a8; }
 
 /* procedência do enunciado quando a banca não publica o caderno (PSU-MG) */
 .fonte-nota { color: var(--tinta-3); font-size: .82rem; }
+
+/* prova cujo gabarito definitivo a banca não publicou */
+.aviso-preliminar {
+  margin-top: 6px;
+  padding: 6px 9px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--tinta-3) 14%, transparent);
+  font-size: .85rem;
+  line-height: 1.35;
+}

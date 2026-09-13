@@ -143,6 +143,8 @@ export function limparQuestao(q) {
       // completa) e as alterações pós-recurso. Linkar só um dos dois não deixa conferir nada.
       gabarito_preliminar_arquivo: nomeArquivo(q.fonte.gabarito_preliminar_pdf),
       origem_texto: q.fonte.origem_texto || '',
+      // false = a banca só publicou o preliminar desta prova. O app avisa junto da resposta.
+      gabarito_definitivo: q.fonte.gabarito_definitivo !== false,
     } : null,
     revisao: q.revisao ? { extracao_ok: q.revisao.extracao_ok !== false, classificacao_ok: q.revisao.classificacao_ok !== false, observacoes: q.revisao.observacoes || '' } : null,
   };

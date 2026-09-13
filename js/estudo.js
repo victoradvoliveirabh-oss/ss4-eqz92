@@ -174,7 +174,10 @@ function caixaGabarito(q, ultima, tentativas) {
   const historico = tentativas.filter((t) => typeof t.c === 'boolean');
   return `<div class="gabarito-caixa ${acertou ? 'certa' : 'errada'}">
     <div class="gabarito-titulo">${acertou ? '✓ Você acertou' : '✗ Você errou'}</div>
-    <div class="gabarito-linha">Gabarito oficial: <b>${esc(q.gabarito)}</b>${ultima && ultima.m ? ` · sua resposta: <b>${esc(ultima.m)}</b>` : ' · você deixou em branco'}</div>
+    <div class="gabarito-linha">Gabarito ${q.fonte && q.fonte.gabarito_definitivo === false ? 'preliminar' : 'oficial'}: <b>${esc(q.gabarito)}</b>${ultima && ultima.m ? ` · sua resposta: <b>${esc(ultima.m)}</b>` : ' · você deixou em branco'}</div>
+    ${q.fonte && q.fonte.gabarito_definitivo === false ? `<div class="gabarito-linha aviso-preliminar">
+      A banca não publicou o gabarito definitivo desta prova. Esta resposta é a do gabarito
+      preliminar e pode ter mudado depois dos recursos.</div>` : ''}
     ${historico.length > 1 ? `<div class="gabarito-linha" style="margin-top:6px">Histórico: ${historico.map((t) => (t.c ? '✓' : '✗')).join(' ')} (${historico.length} tentativas)</div>` : ''}
     <div class="gabarito-linha" style="margin-top:6px">Fonte: ${esc(q.referencia)}${q.fonte && q.fonte.pagina ? ` · pág. ${esc(q.fonte.pagina)}` : ''}
       ${ui.linksFonteHTML(q) ? `<span class="links-fonte">${ui.linksFonteHTML(q)}</span>` : ''}</div>

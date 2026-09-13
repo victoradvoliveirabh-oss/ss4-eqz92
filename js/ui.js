@@ -237,7 +237,10 @@ export function linksFonteHTML(q) {
     links.push(`<a class="link-fonte" href="provas/${encodeURIComponent(f.gabarito_preliminar_arquivo)}" target="_blank" rel="noopener">gabarito oficial ↗</a>`);
   }
   if (f.gabarito_arquivo) {
-    links.push(`<a class="link-fonte" href="provas/${encodeURIComponent(f.gabarito_arquivo)}" target="_blank" rel="noopener">${f.gabarito_preliminar_arquivo ? 'alterações após recursos' : 'gabarito oficial'} ↗</a>`);
+    const rotulo = f.gabarito_preliminar_arquivo ? 'alterações após recursos'
+      : f.gabarito_definitivo === false ? 'gabarito preliminar'
+      : 'gabarito oficial';
+    links.push(`<a class="link-fonte" href="provas/${encodeURIComponent(f.gabarito_arquivo)}" target="_blank" rel="noopener">${rotulo} ↗</a>`);
   }
   if (!f.prova_arquivo && f.origem_texto) {
     links.push(`<span class="fonte-nota">caderno não publicado pela banca; enunciado por ${esc(f.origem_texto.replace(/\s*\(.*\)\s*$/, ''))}</span>`);
