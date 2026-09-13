@@ -16,15 +16,15 @@ const SAIDA_IMG = path.join(APP, 'img');
 const SAIDA_PDF = path.join(APP, 'provas');
 
 export const BANCAS = ['ENAMED', 'ENARE', 'PSU-MG'];
-export const AREAS = {
-  'Clínica Médica': ['Cardiologia', 'Pneumologia', 'Gastroenterologia', 'Hepatologia', 'Nefrologia', 'Endocrinologia', 'Reumatologia', 'Hematologia', 'Oncologia', 'Infectologia', 'Neurologia', 'Psiquiatria', 'Dermatologia', 'Geriatria', 'Medicina Intensiva', 'Emergência Clínica'],
-  'Cirurgia': ['Cirurgia Geral', 'Trauma', 'Cirurgia do Aparelho Digestivo', 'Coloproctologia', 'Cirurgia Vascular', 'Urologia', 'Ortopedia', 'Cirurgia Pediátrica', 'Cirurgia Torácica', 'Cirurgia Plástica e Queimados', 'Anestesiologia', 'Otorrinolaringologia', 'Oftalmologia', 'Neurocirurgia'],
-  'Ginecologia e Obstetrícia': ['Obstetrícia', 'Ginecologia', 'Mastologia', 'Oncoginecologia', 'Reprodução Humana'],
-  'Pediatria': ['Neonatologia', 'Puericultura', 'Infectologia Pediátrica', 'Emergência Pediátrica', 'Pneumologia Pediátrica', 'Gastroenterologia Pediátrica', 'Nefrologia Pediátrica', 'Cardiologia Pediátrica', 'Neurologia Pediátrica', 'Imunização'],
-  'Medicina Preventiva e Social': ['Epidemiologia', 'Bioestatística', 'Saúde Pública e SUS', 'Medicina de Família e Comunidade', 'Vigilância em Saúde', 'Saúde do Trabalhador', 'Ética Médica e Medicina Legal'],
-};
+
+// Uma fonte de verdade só: a lista de especialidades vem do dicionário canônico.
+// Antes havia uma cópia aqui, que ficou desatualizada e passou a divergir da auditoria.
+export { EIXOS, eixoDoSubtema } from '../../banco/tools/dicionario.mjs';
+import { ESPECIALIDADES, eixoDoSubtema as eixoDoSubtemaDic } from '../../banco/tools/dicionario.mjs';
+export const AREAS = ESPECIALIDADES;
 
 const ehTexto = (v) => typeof v === 'string' && v.trim() !== '';
+
 
 /** Valida uma questão. Retorna { erros: [], avisos: [] }. Erros tornam a questão inválida. */
 export function validarQuestao(q, imagensDisponiveis = null, { estrito = false } = {}) {
@@ -122,6 +122,8 @@ export function limparQuestao(q) {
     especialidade: q.especialidade,
     tema: (q.tema || '').trim() || 'Sem tema',
     subtema: q.subtema || '',
+    // eixo = o que a questão cobra (última parte do subtema): permite filtrar conduta x diagnóstico
+    eixo: eixoDoSubtemaDic(q.subtema) || '',
     // como a banca organizou a prova — dimensão própria de filtro, separada da nossa
     // classificação clínica (a questão de hipertensão do bloco "Coletiva" é as duas coisas)
     bloco: blocoDaProva(q),
@@ -142,12 +144,13 @@ export function chaveProva(q) {
 }
 
 export function gerarMeta(questoes, { modoExemplo, arquivos }) {
-  const bancas = new Map(), anos = new Map(), provas = new Map(), blocos = new Map();
+  const bancas = new Map(), anos = new Map(), provas = new Map(), blocos = new Map(), eixos = new Map();
   const areas = new Map();
   let comImagem = 0, anuladas = 0;
   for (const q of questoes) {
     bancas.set(q.banca, (bancas.get(q.banca) || 0) + 1);
     if (q.bloco) blocos.set(q.bloco, (blocos.get(q.bloco) || 0) + 1);
+    if (q.eixo) eixos.set(q.eixo, (eixos.get(q.eixo) || 0) + 1);
     anos.set(q.ano, (anos.get(q.ano) || 0) + 1);
     const cp = chaveProva(q);
     if (!provas.has(cp)) provas.set(cp, { chave: cp, banca: q.banca, ano: q.ano, ciclo: q.ciclo, prova: q.prova, cadernos: new Set(), total: 0 });
@@ -171,6 +174,7 @@ export function gerarMeta(questoes, { modoExemplo, arquivos }) {
     anuladas,
     bancas: [...bancas].sort((a, b) => BANCAS.indexOf(a[0]) - BANCAS.indexOf(b[0])).map(([nome, total]) => ({ nome, total })),
     anos: [...anos].sort((a, b) => a[0] - b[0]).map(([ano, total]) => ({ ano, total })),
+    eixos: [...eixos].sort((a, b) => b[1] - a[1]).map(([nome, total]) => ({ nome, total })),
     blocos: [...blocos].sort((a, b) => b[1] - a[1]).map(([nome, total]) => ({ nome, total })),
     provas: [...provas.values()]
       .sort((a, b) => BANCAS.indexOf(a.banca) - BANCAS.indexOf(b.banca) || b.ano - a.ano || cmp(a.prova, b.prova))

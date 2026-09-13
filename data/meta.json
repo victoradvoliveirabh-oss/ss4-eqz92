@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-09-13T12:40:40.785Z",
+ "geradoEm": "2026-09-13T14:08:54.603Z",
  "modoExemplo": false,
  "arquivos": [
   "ENARE_2024-2025.json"
@@ -17,6 +17,48 @@
   {
    "ano": 2024,
    "total": 100
+  }
+ ],
+ "eixos": [
+  {
+   "nome": "diagnóstico",
+   "total": 39
+  },
+  {
+   "nome": "conduta",
+   "total": 32
+  },
+  {
+   "nome": "complicações",
+   "total": 6
+  },
+  {
+   "nome": "classificação",
+   "total": 6
+  },
+  {
+   "nome": "epidemiologia",
+   "total": 5
+  },
+  {
+   "nome": "prevenção",
+   "total": 4
+  },
+  {
+   "nome": "organização e gestão",
+   "total": 3
+  },
+  {
+   "nome": "exames",
+   "total": 2
+  },
+  {
+   "nome": "etiologia",
+   "total": 2
+  },
+  {
+   "nome": "ética e legal",
+   "total": 1
   }
  ],
  "blocos": [
@@ -272,24 +314,6 @@
      ]
     },
     {
-     "nome": "Trauma",
-     "total": 3,
-     "temas": [
-      {
-       "nome": "Choque hemorrágico",
-       "total": 1
-      },
-      {
-       "nome": "Trauma abdominal",
-       "total": 1
-      },
-      {
-       "nome": "Trauma torácico",
-       "total": 1
-      }
-     ]
-    },
-    {
      "nome": "Cirurgia do Aparelho Digestivo",
      "total": 4,
      "temas": [
@@ -330,11 +354,19 @@
      ]
     },
     {
-     "nome": "Cirurgia Pediátrica",
-     "total": 1,
+     "nome": "Trauma",
+     "total": 3,
      "temas": [
       {
-       "nome": "Constipação crônica",
+       "nome": "Choque hemorrágico",
+       "total": 1
+      },
+      {
+       "nome": "Trauma abdominal",
+       "total": 1
+      },
+      {
+       "nome": "Trauma torácico",
        "total": 1
       }
      ]
@@ -354,11 +386,25 @@
      ]
     },
     {
-     "nome": "Anestesiologia",
+     "nome": "Cirurgia Pediátrica",
      "total": 1,
      "temas": [
       {
-       "nome": "Videolaparoscopia",
+       "nome": "Constipação crônica",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Ortopedia e Traumatologia",
+     "total": 2,
+     "temas": [
+      {
+       "nome": "Fraturas",
+       "total": 1
+      },
+      {
+       "nome": "Ortopedia pediátrica",
        "total": 1
       }
      ]
@@ -374,15 +420,11 @@
      ]
     },
     {
-     "nome": "Ortopedia e Traumatologia",
-     "total": 2,
+     "nome": "Anestesiologia",
+     "total": 1,
      "temas": [
       {
-       "nome": "Fraturas",
-       "total": 1
-      },
-      {
-       "nome": "Ortopedia pediátrica",
+       "nome": "Videolaparoscopia",
        "total": 1
       }
      ]
@@ -540,6 +582,28 @@
      ]
     },
     {
+     "nome": "Imunização",
+     "total": 4,
+     "temas": [
+      {
+       "nome": "Calendário vacinal do adolescente",
+       "total": 1
+      },
+      {
+       "nome": "Doenças imunopreveníveis",
+       "total": 1
+      },
+      {
+       "nome": "Vacina HPV",
+       "total": 1
+      },
+      {
+       "nome": "Vacinação do prematuro",
+       "total": 1
+      }
+     ]
+    },
+    {
      "nome": "Infectologia Pediátrica",
      "total": 2,
      "temas": [
@@ -568,21 +632,21 @@
      ]
     },
     {
-     "nome": "Nefrologia Pediátrica",
-     "total": 1,
-     "temas": [
-      {
-       "nome": "Síndrome hemolítico-urêmica",
-       "total": 1
-      }
-     ]
-    },
-    {
      "nome": "Cardiologia Pediátrica",
      "total": 1,
      "temas": [
       {
        "nome": "Sopros cardíacos",
+       "total": 1
+      }
+     ]
+    },
+    {
+     "nome": "Nefrologia Pediátrica",
+     "total": 1,
+     "temas": [
+      {
+       "nome": "Síndrome hemolítico-urêmica",
        "total": 1
       }
      ]
@@ -596,28 +660,6 @@
        "total": 1
       }
      ]
-    },
-    {
-     "nome": "Imunização",
-     "total": 4,
-     "temas": [
-      {
-       "nome": "Calendário vacinal do adolescente",
-       "total": 1
-      },
-      {
-       "nome": "Doenças imunopreveníveis",
-       "total": 1
-      },
-      {
-       "nome": "Vacina HPV",
-       "total": 1
-      },
-      {
-       "nome": "Vacinação do prematuro",
-       "total": 1
-      }
-     ]
     }
    ]
   },
@@ -625,6 +667,32 @@
    "nome": "Medicina Preventiva e Social",
    "total": 12,
    "especialidades": [
+    {
+     "nome": "Atenção Primária e Medicina de Família",
+     "total": 6,
+     "temas": [
+      {
+       "nome": "Abordagem familiar",
+       "total": 2
+      },
+      {
+       "nome": "Atenção primária à saúde",
+       "total": 1
+      },
+      {
+       "nome": "Projeto terapêutico singular",
+       "total": 1
+      },
+      {
+       "nome": "Registro clínico",
+       "total": 1
+      },
+      {
+       "nome": "Tabagismo",
+       "total": 1
+      }
+     ]
+    },
     {
      "nome": "Vigilância em Saúde",
      "total": 6,
@@ -651,32 +719,6 @@
       },
       {
        "nome": "Tuberculose",
-       "total": 1
-      }
-     ]
-    },
-    {
-     "nome": "Atenção Primária e Medicina de Família",
-     "total": 6,
-     "temas": [
-      {
-       "nome": "Abordagem familiar",
-       "total": 2
-      },
-      {
-       "nome": "Atenção primária à saúde",
-       "total": 1
-      },
-      {
-       "nome": "Projeto terapêutico singular",
-       "total": 1
-      },
-      {
-       "nome": "Registro clínico",
-       "total": 1
-      },
-      {
-       "nome": "Tabagismo",
        "total": 1
       }
      ]
